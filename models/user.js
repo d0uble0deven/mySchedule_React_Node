@@ -11,7 +11,7 @@ const SALT_ROUNDS = 6;
 
 // });
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     name: String,
     email: { type: String, required: true, lowercase: true, unique: true },
     password: String
@@ -40,5 +40,8 @@ userSchema.pre('save', function (next) {
     });
 });
 
+userSchema.methods.comparePassword = function (tryPassword, cb) {
+    bcrypt.compare(tryPassword, this.password, cb)
+}
 
 module.exports = mongoose.model('User', userSchema);

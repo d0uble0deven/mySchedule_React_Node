@@ -17,6 +17,7 @@ class SignupPage extends Component {
             <div className='SignupPage'>
                 <SignupForm {...this.props} updateMessage={this.updateMessage} />
                 <p>{this.state.message}</p>
+                <p>dogs</p>
             </div>
         );
     }
