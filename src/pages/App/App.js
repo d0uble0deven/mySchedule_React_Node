@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import LoginPage from '../LoginPage/LoginPage'
 import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
@@ -18,32 +18,37 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Switch>
-            mySchedule
-          <nav>
-              <Route exact path='/login' render={() =>
-                <LoginPage
-                />
-              } />
+          <h1>mySchedule</h1>
 
-              <Route exact path='/signup' render={({ history }) =>
-                <SignupPage
-                  history={history}
-                />
-              } />
+          {/* routes in nav bar */}
+          <BrowserRouter>
+            <Switch>
+              <nav>
+                <Route exact path='/login' render={() =>
+                  <LoginPage
+                  />
 
-              <Route exact path='/schedules-page' render={() =>
-                <SchedulesPage />
-              } />
+                } />
+
+                <Route exact path='/signup' render={({ history }) =>
+                  <SignupPage
+                    history={history}
+                  />
+                } />
+
+                <Route exact path='/schedules-page' render={() =>
+                  <SchedulesPage />
+                } />
 
 
-              <ul>
-                <li>Log In</li>
-                <li>Sign Up</li>
-              </ul>
-            </nav>
-            <div>mySchedule</div>
-          </Switch>
+                <ul>
+                  <li>Log In</li>
+                  <li>Sign Up</li>
+                </ul>
+              </nav>
+              <div>mySchedule</div>
+            </Switch>
+          </BrowserRouter>
         </header>
 
       </div>
