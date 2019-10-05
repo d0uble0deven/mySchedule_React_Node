@@ -1,3 +1,4 @@
+
 const BASE_URL = '/api/users/';
 
 function signup(user) {
