@@ -34,7 +34,7 @@ class App extends Component {
     this.setState({ user: null });
   }
 
-  handleSignup = () => {
+  handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
   }
 
@@ -69,7 +69,12 @@ class App extends Component {
                   />
                 } />
 
+
+                {/* one of the below pages should work, the other needs to be removed */}
                 <Route exact path='/schedules-page' render={() =>
+                  <SchedulesPage />
+                } />
+                <Route exact path='/schedules' render={() =>
                   <SchedulesPage />
                 } />
 

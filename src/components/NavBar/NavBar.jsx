@@ -15,8 +15,8 @@ import './NavBar';
 const NavBar = (props) => {
     let nav = props.user ?
         <div>
-            {/* <Link to='/high-scores' className='NavBar-link'>HIGH SCORES</Link>
-            &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
+            <Link to='/schedules' className='NavBar-link'>SCHEDULE</Link>
+            &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             {/* <Link to='' className='NavBar-link'>LOG OUT</Link> */}
             <Link to='' className='NavBar-link' onClick={props.handleLogout} >LOG OUT</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
