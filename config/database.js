@@ -1,10 +1,15 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 // update :id after '/myschedule'
-mongoose.connect('mongodb://localhost/myschedule', {
-    useNewUrlParser: true,
-    useUnifiedToplogy: true
-});
+mongoose.connect('mongodb://localhost:27017/myschedule',
+    {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        useFindAndModify: false,
+    }
+)
+
+
 
 var db = mongoose.connection;
 

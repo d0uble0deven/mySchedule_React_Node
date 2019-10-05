@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+// var ObjectId = Schema.ObjectId;
 
-var scheduleSchema = new Schema({
+var scheduleSchema = new mongoose.Schema({
     name: String,
     date: {
         type: Date,
@@ -16,4 +16,4 @@ var scheduleSchema = new Schema({
     userId: String,
 })
 
-module.exports = mongoose.model('Schedule', scheduleSchema)
+module.exports = mongoose.model('Schedule', scheduleSchema);

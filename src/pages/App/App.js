@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
 import './App.css';
 
 
 class App extends Component {
+
+  state = {
+    meeting: []
+  };
+
   render() {
     return (
       <div className="App">
-        <div>mySchedule</div>
+        <header className="App-header">
+          mySchedule
+          <nav>
+            <ul>
+              <li>Log In</li>
+              <li>Sign Up</li>
+            </ul>
+          </nav>
+          <div>mySchedule</div>
+        </header>
       </div>
 
     )

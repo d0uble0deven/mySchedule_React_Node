@@ -1,11 +1,19 @@
-const mongoose = require('mongoose');
-const ObjectId = Schema.ObjectId;
-const Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+// var ObjectId = Schema.ObjectId;
+var Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+// var userSchema = new Schema({
+//     name: String,
+//     email: String,
+
+// });
+
+const userSchema = new mongoose.Schema({
     name: String,
-    email: String,
-
+    email: { type: String, required: true, lowercase: true, unique: true },
+    password: String
+}, {
+    timestamps: true
 });
 
 
