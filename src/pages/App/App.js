@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import './App.css';
+import LoginPage from '../LoginPage/LoginPage'
+import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
+import SignupPage from '../SignupPage/SignupPage';
+// import './App.css';
+
 
 
 class App extends Component {
@@ -14,15 +18,34 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          mySchedule
+          <Switch>
+            mySchedule
           <nav>
-            <ul>
-              <li>Log In</li>
-              <li>Sign Up</li>
-            </ul>
-          </nav>
-          <div>mySchedule</div>
+              <Route exact path='/login' render={() =>
+                <LoginPage
+                />
+              } />
+
+              <Route exact path='/signup' render={({ history }) =>
+                <SignupPage
+                  history={history}
+                />
+              } />
+
+              <Route exact path='/schedules-page' render={() =>
+                <SchedulesPage />
+              } />
+
+
+              <ul>
+                <li>Log In</li>
+                <li>Sign Up</li>
+              </ul>
+            </nav>
+            <div>mySchedule</div>
+          </Switch>
         </header>
+
       </div>
 
     )
