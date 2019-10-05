@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import LoginPage from '../LoginPage/LoginPage'
 import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
 import SignupPage from '../SignupPage/SignupPage';
-// import './App.css';
+import './App.css';
 
 
 
@@ -42,13 +42,14 @@ class App extends Component {
 
 
                 <ul>
-                  <li>Log In</li>
-                  <li>Sign Up</li>
+                  <li><Link to='/signup'>Sign Up</Link></li>
+                  <li><Link to='/login'>Log in</Link></li>
                 </ul>
               </nav>
-              <div>mySchedule</div>
+
             </Switch>
           </BrowserRouter>
+          <div>mySchedule</div>
         </header>
 
       </div>
