@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LoginPage from '../LoginPage/LoginPage'
 import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
 import SignupPage from '../SignupPage/SignupPage';
-import SignupForm from '../../components/SignupForm/SignupForm';
+// import SignupForm from '../../components/SignupForm/SignupForm';
 import userService from '../../utils/userService';
-import tokenService from '../../utils/tokenService';
+// import tokenService from '../../utils/tokenService';
 import './App.css';
-import NavBar from '../../components/NavBar/NavBar';
+// import NavBar from '../../components/NavBar/NavBar';
 
 
 
@@ -16,16 +16,16 @@ class App extends Component {
     super();
     this.state = {
       ...this.getInitialState(),
-      difficulty: 'Easy',
-      scores: [],
+      meeting: ['Coffee with Hagen'],
+      user: 'Dev',
       // Initialize user if there's a token, otherwise null
       user: userService.getUser()
     };
   }
   getInitialState() {
     return {
-      meeting: [],
-      user: ''
+      meeting: ['Coffee with Hagen'],
+      user: 'Dev'
     };
   }
 
@@ -58,11 +58,13 @@ class App extends Component {
 
           <Switch>
             <Route exact path='/' render={() =>
-              <NavBar
+              <SchedulesPage
                 handleLogout={this.handleLogout}
                 user={this.state.user}
               />
             } />
+            {/* <SchedulesPage /> */}
+
 
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage

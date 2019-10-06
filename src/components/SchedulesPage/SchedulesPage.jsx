@@ -1,7 +1,22 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar';
 
-// // Same as HighScoresPage
+// Main Page
+
+
+// Same as HighScoresPage
+
+
+function SchedulesPage() {
+    return (
+        <div>
+            <NavBar />
+
+
+        </div>
+    )
+}
 
 // class SchedulesPage extends Component {
 
@@ -18,7 +33,9 @@
 
 //     }
 
-//     return()
+//     return(
+
+//     )
 // };
 
-// export default SchedulesPage;
+export default SchedulesPage;
