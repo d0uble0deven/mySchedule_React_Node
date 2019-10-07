@@ -8,11 +8,18 @@ import NavBar from '../../components/NavBar/NavBar';
 // Same as HighScoresPage
 
 
-function SchedulesPage() {
+const SchedulesPage = (props) => {
     return (
         <div>
-            <NavBar />
 
+
+
+            <title>SchedulesPage</title>
+
+            <meta
+                name="description"
+                content="A React.js Boilerplate application homepage"
+            />
 
         </div>
     )

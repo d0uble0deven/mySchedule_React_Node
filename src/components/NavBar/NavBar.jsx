@@ -17,12 +17,11 @@ const NavBar = (props) => {
         <div>
             <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <span>Check out your upcoming <Link to='/schedules' className='NavBar-link'>Schedule</Link></span>
+            {/* <span><Link to='' className='NavBar-link'>Check out your upcoming Schedule</Link></span> */}
+            <span>Check out your upcoming Schedule</span>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             {/* <Link to='' className='NavBar-link'>LOG OUT</Link> */}
-            <Link to='' className='NavBar-link' onClick={props.handleLogout} >LOG OUT</Link>
-
-
+            <Link to='' className='NavBar-link' onClick={props.logout} >LOG OUT</Link>
         </div>
         :
         <div>

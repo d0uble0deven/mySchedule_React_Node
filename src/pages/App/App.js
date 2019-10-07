@@ -7,37 +7,56 @@ import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
 // import tokenService from '../../utils/tokenService';
 import './App.css';
-// import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBar';
+// import HomePage from '../../components/HomePage/HomePage'
 
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
-      ...this.getInitialState(),
-      meeting: ['Coffee with Hagen'],
-      user: 'Dev',
-      // Initialize user if there's a token, otherwise null
-      user: userService.getUser()
-    };
+      date: {
+        type: null,
+      },
+      people: null,
+      time: null,
+      location: {
+        type: null,
+      },
+      notes: null,
+      user: null,
+    }
   }
-  getInitialState() {
-    return {
-      meeting: ['Coffee with Hagen'],
-      user: 'Dev'
-    };
-  }
+
+
+  // this.state = {
+  //   ...this.getInitialState(),
+  //   meeting: ['Coffee with Hagen'],
+  //   user: 'Dev',
+  //   // Initialize user if there's a token, otherwise null
+  //   user: userService.getUser()
+  // };
+
+  // getInitialState() {
+  //   return {
+  //     meeting: ['Coffee with Hagen'],
+  //     user: 'Dev'
+  //   };
+  // }
+
+
+
 
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
-    userService.logout();
-    this.setState({ user: null });
+    userService.logout()
+    this.setState({ user: null })
   }
 
   handleSignupOrLogin = () => {
-    this.setState({ user: userService.getUser() });
+    this.setState({ user: userService.getUser() })
   }
 
 
@@ -45,7 +64,7 @@ class App extends Component {
   // state = {
   //   meeting: [],
   //   user: ''
-  // };
+  // }
 
   render() {
     return (
@@ -53,6 +72,10 @@ class App extends Component {
         <header className="App-header">
 
           <h1>mySchedule</h1>
+          <NavBar
+            user={this.state.user}
+            logout={this.handleLogout}
+          />
 
           {/* routes in nav bar */}
 
@@ -61,11 +84,18 @@ class App extends Component {
               <SchedulesPage
                 handleLogout={this.handleLogout}
                 user={this.state.user}
+
+
+              // <div>
+              //               // display of all upcoming events
+              //               // click '+' button
+              // </div>
+
+
+
+              // getInitialState
               />
             } />
-            {/* <SchedulesPage /> */}
-
-
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage
                 history={history}
@@ -78,21 +108,29 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            <Redirect to='/login' />
-            }/>
-        </Switch>
+            <Route exact path='/schedules' render={() =>
+              userService.getUser() ?
+                <SchedulesPage
+                // scores={this.state.scores}
+                // handleUpdateScores={this.handleUpdateScores}
+                />
+                :
+                <Redirect to='/login' />
+            } />
+          </Switch>
+
         </header>
-        <div className="body">
-
-
+        {/* <div className="body">
           <div>mySchedule</div>
-
-        </div>
+        </div> */}
       </div >
 
     )
   }
 }
+
+
+
 
 // function App() {
 //   return (
@@ -115,4 +153,4 @@ class App extends Component {
 //   );
 // }
 
-export default App;
+export default App
