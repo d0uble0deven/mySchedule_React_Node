@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Meeting from '../Meeting/Meeting'
 import './Month.css'
 
 
@@ -8,6 +9,12 @@ class Month extends Component {
         return (
             <div className="Month">
                 Month
+                <hr />
+                <Meeting
+                    deleteItem={this.props.deleteItem}
+                />
+                <hr />
+
             </div >
         )
     }

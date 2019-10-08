@@ -4,6 +4,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import MeetingForm from '../MeetingForm/MeetingForm';
 import Month from '../Schedule/Month/Month';
 import Meeting from '../Schedule/Meeting/Meeting';
+import './SchedulesPage.css';
 
 // Main Page
 
@@ -17,13 +18,17 @@ const SchedulesPage = (props) => {
 
 
 
-            <title>SchedulesPage</title>
+            {/* <title>SchedulesPage</title> */}
             <NavBar />
+            <hr />
             <MeetingForm
                 addSchedule={props.addSchedule}
             />
-            <Month />
-            <Meeting />
+            <hr />
+            <Month
+                deleteItem={props.deleteItem}
+            />
+            <hr />
 
             <meta
                 name="description"
@@ -33,6 +38,25 @@ const SchedulesPage = (props) => {
         </div>
     )
 }
+
+// how to map all state, taked from Mastermind
+// const GameBoard = (props) => (
+//     <div className={styles.GameBoard}>
+//       {props.guesses.map((guess, idx) =>
+//         <GuessRow
+//           guess={guess}
+//           colors={props.colors}
+//           rowIdx={idx}
+//           currentGuess={idx === (props.guesses.length - 1)}
+//           handlePegClick={props.handlePegClick}
+//           handleScoreClick={props.handleScoreClick}
+//           key={idx}
+//         />
+//       )}
+//     </div>
+//   );
+
+
 
 // class SchedulesPage extends Component {
 

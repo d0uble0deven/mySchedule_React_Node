@@ -3,11 +3,18 @@ import './Meeting.css';
 
 
 class Meeting extends Component {
-    render(props) {
+    render() {
         return (
             <div className="Meeting">
+                <hr />
                 Meeting
+                <hr />
+                <button className="deleteItem-btn"
+                    onClick={this.props.deleteItem}>-
+                </button>
+                <hr />
             </div >
+
         )
     }
 

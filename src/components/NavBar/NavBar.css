@@ -1,15 +1,18 @@
 .NavBar-welcome {
-    color: black;
-    background: white;
-  };
+  color: #c84630;
+  background: white;
+  }
 
 .NavBar {
-    color: grey;
+  color: #c84630;
+  background: white;
+  }
+
+.NavBar-link {
+  color: #c84630;
     background: white;
   }
 
-  .NavBar-link {
-    color: grey;
-    background: white;
-  };
-
+h1 {
+    color: #dff8eb;
+  }

@@ -1,5 +1,7 @@
 .MeetingForm {
-    border: black solid 3px;
+    border: #6A687A solid 3px;
+    border-radius: 40%;
+
 }
 
 

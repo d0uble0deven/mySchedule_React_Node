@@ -44,12 +44,60 @@ class App extends Component {
   /*--- CREATE FUNCTION ---*/
 
   addSchedule = (state) => {
-    console.log(state);
-
+    console.log(state)
     this.setState({
       schedule: [...this.state.schedule, state]
     });
   };
+
+
+  /*--- DELETE FUNCTION ---*/
+
+  // TODO_LIST
+  deleteItem = (id) => {
+    console.log(id)
+    // first we copy the state and modify it
+    let newSchedule = this.state.schedule.filter(
+      item => this.state.schedule[id] !== item
+    )
+    // set the state
+    this.setState({
+      schedule: newSchedule
+      // this.setState(({ list }) => ({
+      //   Schedule: schedule.filter((toDo, index) => index !== state)
+      //   // find piece and print state without piece
+    });
+  }
+
+  // REACT-BLOG
+  // handleDelete = id => {
+  //   // first we copy the state and modify it
+  //   let newSchedule = this.state.schedule.filter(
+  //     item => this.state.schedule[id] !== item
+  //   )
+  //   // set the state
+  //   this.setState({
+  //     schedule: newSchedule
+  //   })
+  // }
+
+
+  /*--- UPDATE FUNCTION ---*/
+
+  updateSchedule = (id) => {
+    console.log(id)
+    // first we copy the state and modify it
+    let newSchedule = this.state.schedule.filter(
+      item => this.state.schedule[id] !== item
+    )
+    // set the state
+    this.setState({
+      schedule: newSchedule
+      // this.setState(({ list }) => ({
+      //   Schedule: schedule.filter((toDo, index) => index !== state)
+      //   // find piece and print state without piece
+    });
+  }
 
 
 
@@ -86,7 +134,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
 
-          <h1>mySchedule</h1>
+          {/* <h1>mySchedule</h1> */}
           <NavBar
             user={this.state.user}
             logout={this.handleLogout}

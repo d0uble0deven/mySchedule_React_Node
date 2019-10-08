@@ -36,8 +36,6 @@ class MeetingForm extends Component {
                             value={this.state.date}
                             onChange={this.handleChange}
                             name='date'
-
-                        // onKeyPress={this.handleKeyPress}
                         /></span>
                     </label>
                     <label>
@@ -45,7 +43,6 @@ class MeetingForm extends Component {
                             value={this.state.people}
                             onChange={this.handleChange}
                             name='people'
-                        // onKeyPress={this.handleKeyPress}
                         /></span>
                     </label>
                     <label>
@@ -54,7 +51,6 @@ class MeetingForm extends Component {
                             value={this.state.time}
                             onChange={this.handleChange}
                             name="time"
-                        // onKeyPress={this.handleKeyPress}
                         /></span>
                     </label>
 
@@ -64,7 +60,6 @@ class MeetingForm extends Component {
                             value={this.state.location}
                             onChange={this.handleChange}
                             name='location'
-                        // onKeyPress={this.handleKeyPress}
                         /></span>
                     </label>
 
@@ -74,7 +69,6 @@ class MeetingForm extends Component {
                             value={this.state.notes}
                             onChange={this.handleChange}
                             name='notes'
-                        // onKeyPress={this.handleKeyPress} 
                         />
                         </span>
                     </label>
