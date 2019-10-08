@@ -19,7 +19,9 @@ const SchedulesPage = (props) => {
 
             <title>SchedulesPage</title>
             <NavBar />
-            <MeetingForm />
+            <MeetingForm
+                addSchedule={props.addSchedule}
+            />
             <Month />
             <Meeting />
 

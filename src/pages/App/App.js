@@ -19,16 +19,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: {
-        type: null,
-      },
-      people: null,
-      time: null,
-      location: {
-        type: null,
-      },
-      notes: null,
-      user: null,
+
+      schedule: [],
+      user: userService.getUser(),
     }
   }
 
@@ -50,14 +43,12 @@ class App extends Component {
 
   /*--- CREATE FUNCTION ---*/
 
-  addSchedule = e => {
-    e.preventDefault();
+  addSchedule = (state) => {
+    console.log(state);
 
-    if (!this.formRef.current.checkValidity()) return;
-
-    this.setState(state => ({
-      schedule: [...state.date, state.people, state.time, state.location, state.user]
-    }));
+    this.setState({
+      schedule: [...this.state.schedule, state]
+    });
   };
 
 
@@ -137,6 +128,7 @@ class App extends Component {
             <Route exact path='/schedule' render={() =>
               userService.getUser() ?
                 <SchedulesPage
+                  addSchedule={this.addSchedule}
                 // scores={this.state.scores}
                 // handleUpdateScores={this.handleUpdateScores}
                 />

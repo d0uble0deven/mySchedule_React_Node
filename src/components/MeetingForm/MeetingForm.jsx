@@ -3,60 +3,87 @@ import './MeetingForm.css';
 
 class MeetingForm extends Component {
 
+    state = {
+        date: '',
+        people: '',
+        time: '',
+        location: '',
+        notes: '',
+    }
+
 
     handleChange = e => {
-        const newDate = { ...this.state.date };
-        newDate[e.target.date] = e.target.value;
         // console.log(e.target.checkValidity());
         this.setState({
-            newDate,
-            formInvalid: !this.formRef.current.checkValidity()
+            [e.target.name]: e.target.value
         });
     };
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.addSchedule(this.state)
+    }
 
 
-    render(props) {
+
+    render() {
         return (
             <div className="MeetingForm">
-                <span>Date<input
-                    type="text"
-                    value={this.props.date}
-                    onChange={this.handleChange}
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        <span>Date<input
+                            type="text"
+                            value={this.state.date}
+                            onChange={this.handleChange}
+                            name='date'
 
-                // onKeyPress={this.handleKeyPress}
-                /></span>
+                        // onKeyPress={this.handleKeyPress}
+                        /></span>
+                    </label>
+                    <label>
+                        <span>People<input type="text"
+                            value={this.state.people}
+                            onChange={this.handleChange}
+                            name='people'
+                        // onKeyPress={this.handleKeyPress}
+                        /></span>
+                    </label>
+                    <label>
+                        <span>Time<input
+                            type="text"
+                            value={this.state.time}
+                            onChange={this.handleChange}
+                            name="time"
+                        // onKeyPress={this.handleKeyPress}
+                        /></span>
+                    </label>
 
-                <span>People<input type="text"
-                    value={this.props.people}
-                    onChange={this.handleChange}
-                // onKeyPress={this.handleKeyPress}
-                /></span>
-                <span>Time<input
-                    type="text"
-                    value={this.props.time}
-                    onChange={this.handleChange}
-                // onKeyPress={this.handleKeyPress}
-                /></span>
-                <span>Location<input
-                    type="text"
-                    value={this.props.location}
-                    onChange={this.handleChange}
-                // onKeyPress={this.handleKeyPress}
-                /></span>
-                <span> Notes<input
-                    type="text"
-                    value={this.props.notes}
-                    onChange={this.handleChange}
-                // onKeyPress={this.handleKeyPress} 
-                />
-                </span>
-                <span><button
-                    className=""
-                    onClick={this.addSchedule}
-                >
-                    +
-                    </button> </span>
+                    <label>
+                        <span>Location<input
+                            type="text"
+                            value={this.state.location}
+                            onChange={this.handleChange}
+                            name='location'
+                        // onKeyPress={this.handleKeyPress}
+                        /></span>
+                    </label>
+
+                    <label>
+                        <span> Notes<input
+                            type="text"
+                            value={this.state.notes}
+                            onChange={this.handleChange}
+                            name='notes'
+                        // onKeyPress={this.handleKeyPress} 
+                        />
+                        </span>
+                    </label>
+
+
+                    <span><button> + </button>
+                    </span>
+                </form>
+
             </div >
         )
     }
