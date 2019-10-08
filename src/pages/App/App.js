@@ -148,17 +148,12 @@ class App extends Component {
                 <LandingPage
                   handleLogout={this.handleLogout}
                   user={this.state.user}
-
-
                 // <div>
                 //               // display of all upcoming events
                 //               // click '+' button
                 // </div>
                 // getInitialState
                 />
-                {/* <MeetingForm />
-                <Month />
-                <Meeting /> */}
               </div>
             } />
             <Route exact path='/signup' render={({ history }) =>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar';
+import Title from '../Title/Title';
 
 // const NavBar = () => {
 //     return (
@@ -16,7 +17,7 @@ const NavBar = (props) => {
     let nav = props.user ?
         <div>
             <hr />
-            <h1>mySchedule</h1>
+            <Title />
             <hr />
             <span className='NavBar-welcome'>Welcome, {props.user.name}</span>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

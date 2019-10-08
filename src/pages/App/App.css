@@ -27,8 +27,8 @@ min-height: 100vh;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   /* below changes color of font of headline */
-  color: #6A687A;
-  text-shadow: 5px 5px 10px #dff8eb;
+  /* color: #6A687A;
+  text-shadow: 5px 5px 10px #dff8eb; */
 }
 
 .App-link {

@@ -1,13 +1,14 @@
 import React from 'react';
 import NavBar from '../../components/NavBar/NavBar';
-// import Title from '../../components/Title/Title';
 // import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
+import './Title.css'
 
-
-function HomePage() {
+function Title() {
     return (
         <div>
-            {/* <Title /> */}
+            <h1>
+                mySchedule
+        </h1>
             <NavBar />
         </div>
         // <h1> mySchedule </h1>
@@ -21,5 +22,4 @@ function HomePage() {
     )
 }
 
-
-export default HomePage
+export default Title
