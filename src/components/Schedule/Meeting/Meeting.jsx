@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-class Month extends Component {
+class Meeting extends Component {
     render(props) {
         return (
             <div>
-                Month
+                Meeting
             </div >
         )
     }
@@ -13,10 +13,4 @@ class Month extends Component {
 }
 
 
-export default Month
-
-
-// w1: d1-d7
-// w2: d1-d7
-// w3: d1-d7
-// w4: d1-d7
+export default Meeting

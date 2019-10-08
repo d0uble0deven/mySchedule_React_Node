@@ -9,7 +9,9 @@ import userService from '../../utils/userService';
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
 // import HomePage from '../../components/HomePage/HomePage'
-
+import Month from '../../components/Schedule/Month/Month'
+import Meeting from '../../components/Schedule/Meeting/Meeting'
+import MeetingForm from '../../components/MeetingForm/MeetingForm'
 
 
 class App extends Component {
@@ -81,20 +83,28 @@ class App extends Component {
 
           <Switch>
             <Route exact path='/' render={() =>
-              <SchedulesPage
-                handleLogout={this.handleLogout}
-                user={this.state.user}
+              <div>
+                <SchedulesPage
+                  handleLogout={this.handleLogout}
+                  user={this.state.user}
 
 
-              // <div>
-              //               // display of all upcoming events
-              //               // click '+' button
-              // </div>
+                // <div>
+                //               // display of all upcoming events
+                //               // click '+' button
+                // </div>
 
 
 
-              // getInitialState
-              />
+                // getInitialState
+
+                />
+                <MeetingForm />
+
+                <Month
+
+                />     <Meeting />
+              </div>
             } />
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage
