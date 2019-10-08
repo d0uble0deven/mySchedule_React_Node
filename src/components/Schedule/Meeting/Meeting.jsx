@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './Meeting.css';
 
 
 class Meeting extends Component {
     render(props) {
         return (
-            <div>
+            <div className="Meeting">
                 Meeting
             </div >
         )

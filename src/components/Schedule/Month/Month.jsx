@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import './Month.css'
+
 
 
 class Month extends Component {
     render(props) {
         return (
-            <div>
+            <div className="Month">
                 Month
             </div >
         )

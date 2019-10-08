@@ -100,10 +100,8 @@ class App extends Component {
 
                 />
                 <MeetingForm />
-
-                <Month
-
-                />     <Meeting />
+                <Month />
+                <Meeting />
               </div>
             } />
             <Route exact path='/signup' render={({ history }) =>

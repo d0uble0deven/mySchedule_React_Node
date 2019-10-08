@@ -3,7 +3,7 @@
     background: white;
   };
 
-NavBar {
+.NavBar {
     color: grey;
     background: white;
   }
@@ -12,3 +12,4 @@ NavBar {
     color: grey;
     background: white;
   };
+
