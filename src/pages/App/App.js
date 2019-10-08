@@ -12,6 +12,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import Month from '../../components/Schedule/Month/Month'
 import Meeting from '../../components/Schedule/Meeting/Meeting'
 import MeetingForm from '../../components/MeetingForm/MeetingForm'
+import LandingPage from '../LandingPage/LandingPage';
 
 
 class App extends Component {
@@ -47,6 +48,17 @@ class App extends Component {
   //   };
   // }
 
+  /*--- CREATE FUNCTION ---*/
+
+  addSchedule = e => {
+    e.preventDefault();
+
+    if (!this.formRef.current.checkValidity()) return;
+
+    this.setState(state => ({
+      schedule: [...state.date, state.people, state.time, state.location, state.user]
+    }));
+  };
 
 
 
@@ -68,6 +80,16 @@ class App extends Component {
   //   user: ''
   // }
 
+
+  /*--- Lifecycle Methods ---*/
+
+  // async componentDidMount() {
+  //   const schedules = await schedules.getAll();
+  //   this.setState({ schedules });
+  // }
+
+
+
   render() {
     return (
       <div className="App">
@@ -84,7 +106,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={() =>
               <div>
-                <SchedulesPage
+                <LandingPage
                   handleLogout={this.handleLogout}
                   user={this.state.user}
 
@@ -93,15 +115,11 @@ class App extends Component {
                 //               // display of all upcoming events
                 //               // click '+' button
                 // </div>
-
-
-
                 // getInitialState
-
                 />
-                <MeetingForm />
+                {/* <MeetingForm />
                 <Month />
-                <Meeting />
+                <Meeting /> */}
               </div>
             } />
             <Route exact path='/signup' render={({ history }) =>
@@ -116,7 +134,7 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            <Route exact path='/schedules' render={() =>
+            <Route exact path='/schedule' render={() =>
               userService.getUser() ?
                 <SchedulesPage
                 // scores={this.state.scores}

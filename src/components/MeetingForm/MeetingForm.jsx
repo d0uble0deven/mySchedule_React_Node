@@ -27,14 +27,15 @@ class MeetingForm extends Component {
                 <span>Location<input
                     type="text"
                     value={this.props.location}
-                    onChange={this.handleInput}
-                    onKeyPress={this.handleKeyPress}
+                // onChange={this.handleInput}
+                // onKeyPress={this.handleKeyPress}
                 /></span>
                 <span> Notes<input
                     type="text"
                     value={this.props.notes}
-                    onChange={this.handleInput}
-                    onKeyPress={this.handleKeyPress} />
+                // onChange={this.handleInput}
+                // onKeyPress={this.handleKeyPress} 
+                />
                 </span>
                 <span><button
                     className=""

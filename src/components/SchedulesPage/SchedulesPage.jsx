@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import MeetingForm from '../MeetingForm/MeetingForm';
+import Month from '../Schedule/Month/Month';
+import Meeting from '../Schedule/Meeting/Meeting';
 
 // Main Page
 
@@ -15,6 +18,10 @@ const SchedulesPage = (props) => {
 
 
             <title>SchedulesPage</title>
+            <NavBar />
+            <MeetingForm />
+            <Month />
+            <Meeting />
 
             <meta
                 name="description"
