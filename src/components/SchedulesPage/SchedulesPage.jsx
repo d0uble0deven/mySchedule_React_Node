@@ -26,8 +26,10 @@ const SchedulesPage = (props) => {
             />
             <hr />
             <Month
+                schedule={props.schedule}
                 deleteItem={props.deleteItem}
                 updateSchedule={props.updateSchedule}
+                user={props.user}
             />
             <hr />
 

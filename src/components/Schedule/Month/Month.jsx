@@ -10,10 +10,15 @@ class Month extends Component {
             <div className="Month">
                 Month
                 <hr />
-                <Meeting
-                    deleteItem={this.props.deleteItem}
-                    updateSchedule={this.props.updateSchedule}
-                />
+                {props.schedule.map((meeting, idx) =>
+                    <Meeting
+                        meeting={this.props.schedule}
+                        deleteItem={this.props.deleteItem}
+                        updateSchedule={this.props.updateSchedule}
+                        user={this.props.user}
+                        key={idx}
+                    />
+                )}
                 <hr />
 
             </div >
@@ -21,6 +26,23 @@ class Month extends Component {
     }
 
 }
+
+{/* // how to map all state, taked from Mastermind
+// const GameBoard = (props) => (
+//     <div className={styles.GameBoard}>
+//       {props.guesses.map((guess, idx) =>
+//         <GuessRow
+//           guess={guess}
+//           colors={props.colors}
+//           rowIdx={idx}
+//           currentGuess={idx === (props.guesses.length - 1)}
+//           handlePegClick={props.handlePegClick}
+//           handleScoreClick={props.handleScoreClick}
+//           key={idx}
+//         />
+//       )}
+//     </div>
+//   ); */}
 
 
 export default Month
