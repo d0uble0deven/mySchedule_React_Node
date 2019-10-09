@@ -5,47 +5,73 @@ import './Month.css'
 
 
 class Month extends Component {
-    render(props) {
+    render() {
         return (
             <div className="Month">
                 Month
-                <hr />
-                {props.schedule.map((meeting, idx) =>
-                    <Meeting
-                        meeting={this.props.schedule}
-                        deleteItem={this.props.deleteItem}
-                        updateSchedule={this.props.updateSchedule}
-                        user={this.props.user}
-                        key={idx}
-                    />
-                )}
+
+       {/* this.props.schedule ? */}
+
+                {/* {this.props.schedule.map((schedule, idx) => */}
+                <Meeting
+                    schedule={this.props.schedule}
+                    // deleteItem={this.props.deleteItem}
+                    // updateSchedule={this.props.updateSchedule}
+                    user={this.props.user}
+                // key={idx}
+                />
+                )
+                }
                 <hr />
 
-            </div >
+            </div >)
+        // :
+        return (
+            <div>
+                Meeting
+                {/* <Meeting />
+                <p>loading...</p> */}
+            </div>
         )
+
+
     }
 
 }
 
-{/* // how to map all state, taked from Mastermind
-// const GameBoard = (props) => (
-//     <div className={styles.GameBoard}>
-//       {props.guesses.map((guess, idx) =>
-//         <GuessRow
-//           guess={guess}
-//           colors={props.colors}
-//           rowIdx={idx}
-//           currentGuess={idx === (props.guesses.length - 1)}
-//           handlePegClick={props.handlePegClick}
-//           handleScoreClick={props.handleScoreClick}
-//           key={idx}
-//         />
-//       )}
-//     </div>
-//   ); */}
+// {/* // how to map all state, taked from Mastermind
+// // const GameBoard = (props) => (
+// //     <div className={styles.GameBoard}>
+// //       {props.guesses.map((guess, idx) =>
+// //         <GuessRow
+// //           guess={guess}
+// //           colors={props.colors}
+// //           rowIdx={idx}
+// //           currentGuess={idx === (props.guesses.length - 1)}
+// //           handlePegClick={props.handlePegClick}
+// //           handleScoreClick={props.handleScoreClick}
+// //           key={idx}
+// //         />
+// //       )}
+// //     </div>
+// //   ); */}
 
 
 export default Month
+
+// functions are written below because they can be called at the top (aka "hoisting")
+async function getAll() {
+    const url = 'http://localhost:3000';
+    const initialFetch = await fetch(url)
+    const fetchJSON = await initialFetch.json()
+    return await fetchJSON
+}
+
+async function handleVerbs(url, options) {
+    const initialFetch = await fetch(url, options)
+    const fetchJSON = await initialFetch.json()
+    return await fetchJSON
+}
 
 
 // w1: d1-d7

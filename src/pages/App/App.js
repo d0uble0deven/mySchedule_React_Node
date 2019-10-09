@@ -172,6 +172,7 @@ class App extends Component {
               userService.getUser() ?
                 <SchedulesPage
                   addSchedule={this.addSchedule}
+                  schedule={this.state.schedule}
                 // scores={this.state.scores}
                 // handleUpdateScores={this.handleUpdateScores}
                 />

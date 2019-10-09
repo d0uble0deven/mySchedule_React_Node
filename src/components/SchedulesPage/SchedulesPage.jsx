@@ -30,6 +30,7 @@ const SchedulesPage = (props) => {
                 deleteItem={props.deleteItem}
                 updateSchedule={props.updateSchedule}
                 user={props.user}
+
             />
             <hr />
 
