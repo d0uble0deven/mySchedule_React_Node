@@ -27,6 +27,7 @@ const SchedulesPage = (props) => {
             <hr />
             <Month
                 deleteItem={props.deleteItem}
+                updateSchedule={props.updateSchedule}
             />
             <hr />
 

@@ -12,6 +12,7 @@ class Month extends Component {
                 <hr />
                 <Meeting
                     deleteItem={this.props.deleteItem}
+                    updateSchedule={this.props.updateSchedule}
                 />
                 <hr />
 

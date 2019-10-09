@@ -15,16 +15,15 @@ import Title from '../Title/Title';
 
 const NavBar = (props) => {
     let nav = props.user ?
+        // ternary is an issue
         <div>
             <hr />
             <Title />
             <hr />
             <span className='NavBar-welcome'>Welcome, {props.user.name}</span>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            {/* <span><Link to='' className='NavBar-link'>Check out your upcoming Schedule</Link></span> */}
             <span>Check out your upcoming schedule</span>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            {/* <Link to='' className='NavBar-link'>LOG OUT</Link> */}
             <Link to='/' className='NavBar-link' onClick={props.logout} >LOG OUT</Link>
             <hr />
         </div>
