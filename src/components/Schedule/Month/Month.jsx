@@ -9,30 +9,31 @@ class Month extends Component {
         return (
             <div className="Month">
                 Month
+       this.props.schedule !== 'null' ?
 
-       {/* this.props.schedule ? */}
 
-                {/* {this.props.schedule.map((schedule, idx) => */}
-                <Meeting
-                    schedule={this.props.schedule}
-                    // deleteItem={this.props.deleteItem}
-                    // updateSchedule={this.props.updateSchedule}
-                    user={this.props.user}
-                // key={idx}
-                />
+                {this.props.schedule.map((schedule, idx) =>
+                    <Meeting
+                        schedule={this.props.schedule}
+                        // deleteItem={this.props.deleteItem}
+                        // updateSchedule={this.props.updateSchedule}
+                        user={this.props.user}
+                    // key={idx}
+                    />
                 )
                 }
-                <hr />
-
-            </div >)
-        // :
-        return (
-            <div>
-                Meeting
-                {/* <Meeting />
-                <p>loading...</p> */}
-            </div>
+                {/* < hr /> */}
+                :
+            </div >
         )
+
+            (
+                <div>
+                    <p>Meeting</p>
+
+                </div>
+
+            )
 
 
     }
