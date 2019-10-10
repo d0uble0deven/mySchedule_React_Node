@@ -19,6 +19,7 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+  console.log(req.body);
   const schedule = await Schedule.create(req.body);
   res.status(201).json(schedule);
 }

@@ -1,44 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./MeetingCard.css";
 
-function MeetingCard({ schedule, handleDeleteSchedule }) {
+function MeetingCard({ sched, handleDeleteSchedule }) {
+  // console.log("these are the props", props);
   return (
     <div className="panel panel-default">
       <div className="panel-heading"></div>
       <div className="panel-body">
-        <dl>
+        <dl className="dl">
           <dt>Date</dt>
-          <dd>{schedule.date}</dd>
+          <dd>{sched.date}</dd>
           <dt>People</dt>
-          <dd>{schedule.people}</dd>
+          <dd>{sched.people}</dd>
           <dt>Time</dt>
-          <dd>{schedule.time}</dd>
+          <dd>{sched.time}</dd>
           <dt>Location</dt>
-          <dd>{schedule.location}</dd>
+          <dd>{sched.location}</dd>
           <dt>Notes</dt>
-          <dd>{schedule.notes}</dd>
+          <dd>{sched.notes}</dd>
         </dl>
       </div>
       <div className="panel-footer">
-        {/* 
-          The following is another approach to provide 
-          data to a different route that's different
-          from the Star Wars lab's solution code.
-          The state object can be accessed in the new
-          route via the location.state object
-        */}
         <Link
           className="btn btn-xs btn-warning"
           to={{
             pathname: "/edit",
-            state: { schedule }
+            state: { sched }
           }}
         >
           EDIT
         </Link>
         <button
           className="btn btn-xs btn-danger margin-left-10"
-          onClick={() => handleDeleteSchedule(schedule._id)}
+          onClick={() => handleDeleteSchedule(sched._id)}
         >
           DELETE
         </button>

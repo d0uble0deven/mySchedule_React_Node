@@ -29,7 +29,7 @@ class App extends Component {
     console.log(newSchedule);
     this.setState(
       state => ({
-        schedule: [...state.schedule, newSchedule]
+        schedule: [...this.state.schedule, newSchedule]
       }),
       () => this.props.history.push("/schedule")
     );
@@ -156,7 +156,7 @@ class App extends Component {
                 userService.getUser() ? (
                   <SchedulesPage
                     schedule={this.state.schedule}
-                    handleUpdateSchedule={this.handleUpdateSchedule}
+                    // handleUpdateSchedule={this.handleUpdateSchedule}
                     handleDeleteSchedule={this.handleDeleteSchedule}
                   />
                 ) : (

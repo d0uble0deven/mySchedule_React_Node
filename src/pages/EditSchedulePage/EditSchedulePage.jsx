@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 class EditSchedulePage extends Component {
   state = {
+    // schedule,
     formData: this.props.location.state.schedule
     // formData: {
     //   date: "",
@@ -32,7 +33,7 @@ class EditSchedulePage extends Component {
     return (
       <div className="EditSchedulePage">
         <h4>Edit</h4>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>Date</label>
           <input
             type="text"

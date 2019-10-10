@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 class MeetingForm extends Component {
   state = {
     formData: {
-      date: "",
-      people: "",
-      time: "",
-      location: "",
-      notes: ""
+      date: " ",
+      people: " ",
+      time: " ",
+      location: " ",
+      notes: " "
     }
   };
 

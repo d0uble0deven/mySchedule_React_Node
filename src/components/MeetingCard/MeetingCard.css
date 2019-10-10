@@ -1,0 +1,11 @@
+.panel panel-default {
+  border: black solid 5px;
+}
+
+dt {
+  font-weight: 800;
+}
+
+.dl {
+  border: black;
+}
