@@ -4,7 +4,7 @@ import "./Month.css";
 
 class Month extends Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="Month">
         Month

@@ -1,39 +1,36 @@
 import React, { Component } from "react";
-import "./MeetingForm.css";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-class MeetingForm extends Component {
+class EditSchedulePage extends Component {
   state = {
-    formData: {
-      date: "",
-      people: "",
-      time: "",
-      location: "",
-      notes: ""
-    }
+    formData: this.props.schedule
+    // formData: {
+    //   date: "",
+    //   people: "",
+    //   time: "",
+    //   location: "",
+    //   notes: ""
+    // }
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.handleUpdateSchedule(this.state.formData);
   };
 
   handleChange = e => {
-    // console.log(e.target.checkValidity());
     const formData = {
       ...this.state.formData,
       [e.target.name]: e.target.value
     };
     this.setState({
       formData
-
-      //   [e.target.name]: e.target.value
     });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.handleAddSchedule(this.state.formData);
   };
 
   render() {
     return (
-      <div className="MeetingForm">
+      <div className="EditSchedulePage">
         <form onSubmit={this.handleSubmit}>
           <label>Date</label>
           <input
@@ -43,7 +40,7 @@ class MeetingForm extends Component {
             name="date"
           />
 
-          <label>People </label>
+          <label>People</label>
           <input
             type="text"
             value={this.state.formData.people}
@@ -59,7 +56,7 @@ class MeetingForm extends Component {
             name="time"
           />
 
-          <label>Location </label>
+          <label>Location</label>
           <input
             type="text"
             value={this.state.formData.location}
@@ -67,7 +64,7 @@ class MeetingForm extends Component {
             name="location"
           />
 
-          <label>Notes </label>
+          <label>Notes</label>
           <input
             type="text"
             value={this.state.formData.notes}
@@ -75,15 +72,16 @@ class MeetingForm extends Component {
             name="notes"
           />
 
-          <button type="submit"> + </button>
+          <button type="submit"> += </button>
+          <Link to="/schedule">CANCEL</Link>
         </form>
       </div>
     );
   }
 }
 
-export default MeetingForm;
+export default EditSchedulePage;
 
-MeetingForm.propTypes = {
-  handleAddSchedule: PropTypes.func.isRequired
+EditSchedulePage.propTypes = {
+  handleUpdateSchedule: PropTypes.func.isRequired
 };

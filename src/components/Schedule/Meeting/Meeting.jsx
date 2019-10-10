@@ -1,29 +1,30 @@
-import React, { Component } from 'react';
-import './Meeting.css';
-
+import React, { Component } from "react";
+import "./Meeting.css";
 
 class Meeting extends Component {
-    render() {
-        return (
-            <div className="Meeting">
-                <hr />
-                Meeting
-                <hr />
-                <button className="deleteItem-btn"
-                    onClick={this.props.deleteItem}>X
-                </button>
-                <button className="updateItem-btn"
-                    onClick={this.props.updateSchedule}>Edit
-                </button>
-                <hr />
-            </div >
-
-        )
-    }
-
+  render() {
+    return (
+      <div className="Meeting">
+        <hr />
+        Meeting
+        <hr />
+        <button
+          className="deleteItem-btn"
+          onClick={this.props.handleDeleteSchedule}
+        >
+          X
+        </button>
+        <button
+          className="updateItem-btn"
+          onClick={this.props.handleUpdateSchedule}
+        >
+          Edit
+        </button>
+        <hr />
+      </div>
+    );
+  }
 }
-
-
 
 // how to map all state, taked from Mastermind
 // const GameBoard = (props) => (
@@ -42,4 +43,4 @@ class Meeting extends Component {
 //     </div>
 //   );
 
-export default Meeting
+export default Meeting;
