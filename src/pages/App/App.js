@@ -22,8 +22,9 @@ class App extends Component {
   /*--- CREATE FUNCTION ---*/
 
   handleAddSchedule = async newScheduleData => {
-    // console.log(newScheduleData);
+    console.log(newScheduleData);
     const newSchedule = await scheduleAPI.create(newScheduleData);
+    console.log(newSchedule);
     this.setState(
       state => ({
         schedule: [...state.schedule, newSchedule]
@@ -31,12 +32,6 @@ class App extends Component {
       () => this.props.history.push("/schedule")
     );
   };
-  // handleAddSchedule = state => {
-  //   console.log(state);
-  //   this.setState({
-  //     schedule: [...this.state.schedule, state]
-  //   });
-  // };
 
   /*--- DELETE FUNCTION ---*/
 
@@ -51,44 +46,23 @@ class App extends Component {
     );
   };
 
-  // TODO_LIST
-  // deleteItem = id => {
-  //   console.log(id);
-  //   // first we copy the state and modify it
-  //   let newSchedule = this.state.schedule.filter(
-  //     item => this.state.schedule[id] !== item
-  //   );
-  //   // set the state
-  //   this.setState({
-  //     schedule: newSchedule
-  //   });
-  // };
-
   /*--- UPDATE FUNCTION ---*/
 
   handleUpdateSchedule = async updatedSchedData => {
-    const updatedSchedule = await scheduleAPI.update(updatedSchedData);
-    const newScheduleArray = this.state.schedule.map(p =>
-      p._id === updatedSchedule._id ? updatedSchedule : p
-    );
-    this.setState(
-      { Schedule: newScheduleArray },
-      // Using cb to wait for state to update before rerouting
-      () => this.props.history.push("/schedule")
-    );
+    try {
+      const updatedSchedule = await scheduleAPI.asyncUpdate(updatedSchedData);
+      const newScheduleArray = this.state.schedule.map(p =>
+        p._id === updatedSchedule._id ? updatedSchedule : p
+      );
+      this.setState(
+        { Schedule: newScheduleArray },
+        // Using cb to wait for state to update before rerouting
+        () => this.props.history.push("/schedule")
+      );
+    } catch (error) {
+      throw new Error(error);
+    }
   };
-
-  // updateSchedule = id => {
-  //   console.log(id);
-  //   // first we copy the state and modify it
-  //   let newSchedule = this.state.schedule.filter(
-  //     item => this.state.schedule[id] !== item
-  //   );
-  //   // set the state
-  //   this.setState({
-  //     schedule: newSchedule
-  //   });
-  // };
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
@@ -147,6 +121,13 @@ class App extends Component {
                 />
               )}
             />
+            {/* <Route exact path="/edit" render={() => userService.getUser() ? (
+              <EditSchedulePage
+              // handleUpdateSchedule={this.handleAddSchedule}
+              />
+            )
+            /> */}
+
             <Route
               exact
               path="/schedule"

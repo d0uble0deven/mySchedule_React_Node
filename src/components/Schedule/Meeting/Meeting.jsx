@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import "./Meeting.css";
 
 class Meeting extends Component {
@@ -20,27 +22,11 @@ class Meeting extends Component {
         >
           Edit
         </button>
+        <Link to="/edit">Edit</Link>
         <hr />
       </div>
     );
   }
 }
-
-// how to map all state, taked from Mastermind
-// const GameBoard = (props) => (
-//     <div className={styles.GameBoard}>
-//       {props.guesses.map((guess, idx) =>
-//         <GuessRow
-//           guess={guess}
-//           colors={props.colors}
-//           rowIdx={idx}
-//           currentGuess={idx === (props.guesses.length - 1)}
-//           handlePegClick={props.handlePegClick}
-//           handleScoreClick={props.handleScoreClick}
-//           key={idx}
-//         />
-//       )}
-//     </div>
-//   );
 
 export default Meeting;

@@ -1,25 +1,14 @@
-import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+import React from "react";
+// import NavBar from "../../components/NavBar/NavBar";
 // import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
-import './Title.css'
+import "./Title.css";
 
 function Title() {
-    return (
-        <div>
-            <h1>
-                mySchedule
-        </h1>
-            <NavBar />
-        </div>
-        // <h1> mySchedule </h1>
-        // <div>
-        //     <h3> {props.date} </h3>
-        //     <p> Person: {props.person} </p>
-        //     <p> Time: {props.time} </p>
-        //     <p> Location: {props.location} </p>
-        //     <p> Notes: {props.notes} </p>
-        // </div>
-    )
+  return (
+    <div>
+      <h1>mySchedule</h1>
+    </div>
+  );
 }
 
-export default Title
+export default Title;

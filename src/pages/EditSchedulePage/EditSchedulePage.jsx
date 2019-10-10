@@ -36,7 +36,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.date}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             name="date"
           />
 
@@ -44,7 +44,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.people}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             name="people"
           />
 
@@ -52,7 +52,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.time}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             name="time"
           />
 
@@ -60,7 +60,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.location}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             name="location"
           />
 
@@ -68,7 +68,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.notes}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             name="notes"
           />
 

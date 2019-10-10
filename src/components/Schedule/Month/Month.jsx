@@ -12,8 +12,8 @@ class Month extends Component {
           this.props.schedule.map(schedule => (
             <Meeting
               schedule={this.props.schedule}
-              // deleteItem={this.props.deleteItem}
-              //updateSchedule={this.props.updateSchedule}
+              handleUpdateSchedule={this.props.handleUpdateSchedule}
+              handleDeleteSchedule={this.props.handleDeleteSchedule}
               user={this.props.user}
               key={schedule._id}
             />
