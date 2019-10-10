@@ -10,11 +10,9 @@ import "./SchedulesPage.css";
 const SchedulesPage = props => {
   return (
     <div>
-      {/* <title>SchedulesPage</title> */}
       <NavBar />
       <hr />
-      <MeetingForm handleAddSchedule={props.handleAddSchedule} />
-      <hr />
+
       <Month
         schedule={props.schedule}
         handleDeleteSchedule={props.handleDeleteSchedule}
@@ -22,11 +20,6 @@ const SchedulesPage = props => {
         user={props.user}
       />
       <hr />
-
-      <meta
-        name="description"
-        content="A React.js Boilerplate application homepage"
-      />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import LandingPage from "../LandingPage/LandingPage";
 // import scheduleService from "../../utils/scheduleService";
 import * as scheduleAPI from "../../services/schedules-api";
+import AddSchedulePage from "../AddSchedulePage/AddSchedulePage";
 
 class App extends Component {
   constructor(props) {
@@ -104,6 +105,19 @@ class App extends Component {
             />
             <Route
               exact
+              path="/add"
+              render={() => (
+                <div>
+                  <AddSchedulePage
+                    handleAddSchedule={this.handleAddSchedule}
+                    handleLogout={this.handleLogout}
+                    user={this.state.user}
+                  />
+                </div>
+              )}
+            />
+            <Route
+              exact
               path="/signup"
               render={({ history }) => (
                 <SignupPage
@@ -136,7 +150,6 @@ class App extends Component {
                 userService.getUser() ? (
                   <SchedulesPage
                     schedule={this.state.schedule}
-                    handleAddSchedule={this.handleAddSchedule}
                     handleUpdateSchedule={this.handleUpdateSchedule}
                     handleDeleteSchedule={this.handleDeleteSchedule}
                   />

@@ -7,20 +7,20 @@ class Month extends Component {
     // console.log(this.props);
     return (
       <div className="Month">
-        Month
+        SCHEDULE
         {this.props.schedule.length > 0 ? (
           this.props.schedule.map(schedule => (
             <Meeting
+              key={schedule._id}
               schedule={this.props.schedule}
               handleUpdateSchedule={this.props.handleUpdateSchedule}
               handleDeleteSchedule={this.props.handleDeleteSchedule}
               user={this.props.user}
-              key={schedule._id}
             />
           ))
         ) : (
           <div>
-            <p>Add Meeting</p>
+            <p>Add A Meeting In The Above Nav Bar</p>
           </div>
         )}
       </div>

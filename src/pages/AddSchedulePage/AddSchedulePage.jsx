@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./MeetingForm.css";
+import "../../components/MeetingForm/MeetingForm.css";
 import PropTypes from "prop-types";
 
-class MeetingForm extends Component {
+class AddSchedulePage extends Component {
   state = {
     formData: {
       date: "",
@@ -82,8 +82,8 @@ class MeetingForm extends Component {
   }
 }
 
-export default MeetingForm;
-
-MeetingForm.propTypes = {
-  // handleAddSchedule: PropTypes.func.isRequired
+AddSchedulePage.propTypes = {
+  handleAddSchedule: PropTypes.func.isRequired
 };
+
+export default AddSchedulePage;

@@ -14,6 +14,10 @@ const NavBar = props => {
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span>Check out your upcoming schedule</span>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Link to="/add" className="NavBar-link">
+        <span>ADD</span>
+      </Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to="/" className="NavBar-link" onClick={props.logout}>
         LOG OUT
       </Link>

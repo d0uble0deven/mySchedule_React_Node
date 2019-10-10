@@ -9,6 +9,16 @@ class Meeting extends Component {
       <div className="Meeting">
         <hr />
         Meeting
+        <div>
+          {/* {props.schedule.map(schedule => ( 
+        key={schedule._id}
+        schedule={schedule}
+        handleUpdateSchedule={state.handleUpdateSchedule}
+        handleDeleteSchedule={state.handleDeleteSchedule}
+        user={state.user}
+        ))
+      } */}
+        </div>
         <button
           className="deleteItem-btn"
           onClick={this.props.handleDeleteSchedule}
