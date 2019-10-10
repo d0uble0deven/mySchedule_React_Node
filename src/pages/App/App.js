@@ -8,7 +8,7 @@ import "./App.css";
 import NavBar from "../../components/NavBar/NavBar";
 import LandingPage from "../LandingPage/LandingPage";
 // import scheduleService from "../../utils/scheduleService";
-import * as scheduleAPIT from "../../services/schedules-api";
+import * as scheduleAPI from "../../services/schedules-api";
 
 class App extends Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class App extends Component {
   async componentDidMount() {
     console.log("i am App and i have mounted");
     // make your call to set our inital state to the data here after component has mounted
-    const schedules = await schedulesAPI.getAll();
+    const schedules = await scheduleAPI.getAll();
     this.setState({ schedules });
   }
 
@@ -90,11 +90,6 @@ class App extends Component {
                   <LandingPage
                     handleLogout={this.handleLogout}
                     user={this.state.user}
-                    // <div>
-                    //               // display of all upcoming events
-                    //               // click '+' button
-                    // </div>
-                    // getInitialState
                   />
                 </div>
               )}
@@ -127,8 +122,6 @@ class App extends Component {
                   <SchedulesPage
                     addSchedule={this.addSchedule}
                     schedule={this.state.schedule}
-                    // scores={this.state.scores}
-                    // handleUpdateScores={this.handleUpdateScores}
                   />
                 ) : (
                   <Redirect to="/login" />
@@ -141,26 +134,5 @@ class App extends Component {
     );
   }
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

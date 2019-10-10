@@ -9,13 +9,13 @@ class Month extends Component {
       <div className="Month">
         Month
         {this.props.schedule.length > 0 ? (
-          this.props.schedule.map((schedule, idx) => (
+          this.props.schedule.map(schedule => (
             <Meeting
               schedule={this.props.schedule}
               // deleteItem={this.props.deleteItem}
               //updateSchedule={this.props.updateSchedule}
               user={this.props.user}
-              key={idx}
+              key={schedule._id}
             />
           ))
         ) : (
@@ -27,23 +27,6 @@ class Month extends Component {
     );
   }
 }
-
-// {/* // how to map all state, taked from Mastermind
-// // const GameBoard = (props) => (
-// //     <div className={styles.GameBoard}>
-// //       {props.guesses.map((guess, idx) =>
-// //         <GuessRow
-// //           guess={guess}
-// //           colors={props.colors}
-// //           rowIdx={idx}
-// //           currentGuess={idx === (props.guesses.length - 1)}
-// //           handlePegClick={props.handlePegClick}
-// //           handleScoreClick={props.handleScoreClick}
-// //           key={idx}
-// //         />
-// //       )}
-// //     </div>
-// //   ); */}
 
 export default Month;
 
@@ -60,8 +43,3 @@ async function handleVerbs(url, options) {
   const fetchJSON = await initialFetch.json();
   return await fetchJSON;
 }
-
-// w1: d1-d7
-// w2: d1-d7
-// w3: d1-d7
-// w4: d1-d7
