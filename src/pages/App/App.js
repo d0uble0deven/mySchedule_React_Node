@@ -10,6 +10,7 @@ import LandingPage from "../LandingPage/LandingPage";
 // import scheduleService from "../../utils/scheduleService";
 import * as scheduleAPI from "../../services/schedules-api";
 import AddSchedulePage from "../AddSchedulePage/AddSchedulePage";
+import EditSchedulePage from "../EditSchedulePage/EditSchedulePage";
 
 class App extends Component {
   constructor(props) {
@@ -136,12 +137,17 @@ class App extends Component {
                 />
               )}
             />
-            {/* <Route exact path="/edit" render={() => userService.getUser() ? (
-              <EditSchedulePage
-              // handleUpdateSchedule={this.handleAddSchedule}
-              />
-            )
-            /> */}
+
+            <Route
+              exact
+              path="/edit"
+              render={({ history, location }) => (
+                <EditSchedulePage
+                  handleUpdateSchedule={this.handleUpdateSchedule}
+                  location={location}
+                />
+              )}
+            />
 
             <Route
               exact

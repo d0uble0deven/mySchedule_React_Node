@@ -31,7 +31,7 @@ class EditSchedulePage extends Component {
   render() {
     return (
       <div className="EditSchedulePage">
-        <h1>Edit</h1>
+        <h4>Edit</h4>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <label>Date</label>
           <input
@@ -83,6 +83,6 @@ class EditSchedulePage extends Component {
 
 export default EditSchedulePage;
 
-EditSchedulePage.propTypes = {
-  handleUpdateSchedule: PropTypes.func.isRequired
-};
+// EditSchedulePage.propTypes = {
+//   handleUpdateSchedule: PropTypes.func.isRequired
+// };
