@@ -1,198 +1,146 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import LoginPage from '../LoginPage/LoginPage'
-import SchedulesPage from '../../components/SchedulesPage/SchedulesPage';
-import SignupPage from '../SignupPage/SignupPage';
-// import SignupForm from '../../components/SignupForm/SignupForm';
-import userService from '../../utils/userService';
-// import tokenService from '../../utils/tokenService';
-import './App.css';
-import NavBar from '../../components/NavBar/NavBar';
-// import HomePage from '../../components/HomePage/HomePage'
-import Month from '../../components/Schedule/Month/Month'
-import Meeting from '../../components/Schedule/Meeting/Meeting'
-import MeetingForm from '../../components/MeetingForm/MeetingForm'
-import LandingPage from '../LandingPage/LandingPage';
-
+import LoginPage from "../LoginPage/LoginPage";
+import SchedulesPage from "../../components/SchedulesPage/SchedulesPage";
+import SignupPage from "../SignupPage/SignupPage";
+import userService from "../../utils/userService";
+import "./App.css";
+import NavBar from "../../components/NavBar/NavBar";
+import LandingPage from "../LandingPage/LandingPage";
+// import scheduleService from "../../utils/scheduleService";
+import * as scheduleAPIT from "../../services/schedules-api";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-
-      schedule: [],
-      user: userService.getUser(),
-    }
+      schedule: [], // set to empty array so we dont get errors from our map methods
+      user: userService.getUser()
+    };
   }
-
-
-  // this.state = {
-  //   ...this.getInitialState(),
-  //   meeting: ['Coffee with Hagen'],
-  //   user: 'Dev',
-  //   // Initialize user if there's a token, otherwise null
-  //   user: userService.getUser()
-  // };
-
-  // getInitialState() {
-  //   return {
-  //     meeting: ['Coffee with Hagen'],
-  //     user: 'Dev'
-  //   };
-  // }
 
   /*--- CREATE FUNCTION ---*/
 
-  addSchedule = (state) => {
-    console.log(state)
+  addSchedule = state => {
+    console.log(state);
     this.setState({
       schedule: [...this.state.schedule, state]
     });
   };
 
-
   /*--- DELETE FUNCTION ---*/
 
   // TODO_LIST
-  deleteItem = (id) => {
-    console.log(id)
+  deleteItem = id => {
+    console.log(id);
     // first we copy the state and modify it
     let newSchedule = this.state.schedule.filter(
       item => this.state.schedule[id] !== item
-    )
+    );
     // set the state
     this.setState({
       schedule: newSchedule
-      // this.setState(({ list }) => ({
-      //   Schedule: schedule.filter((toDo, index) => index !== state)
-      //   // find piece and print state without piece
     });
-  }
-
-  // REACT-BLOG
-  // handleDelete = id => {
-  //   // first we copy the state and modify it
-  //   let newSchedule = this.state.schedule.filter(
-  //     item => this.state.schedule[id] !== item
-  //   )
-  //   // set the state
-  //   this.setState({
-  //     schedule: newSchedule
-  //   })
-  // }
-
+  };
 
   /*--- UPDATE FUNCTION ---*/
 
-  updateSchedule = (id) => {
-    console.log(id)
+  updateSchedule = id => {
+    console.log(id);
     // first we copy the state and modify it
     let newSchedule = this.state.schedule.filter(
       item => this.state.schedule[id] !== item
-    )
+    );
     // set the state
     this.setState({
       schedule: newSchedule
-      // this.setState(({ list }) => ({
-      //   Schedule: schedule.filter((toDo, index) => index !== state)
-      //   // find piece and print state without piece
     });
-  }
-
-
-
+  };
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
-    userService.logout()
-    this.setState({ user: null })
-  }
+    userService.logout();
+    this.setState({ user: null });
+  };
 
   handleSignupOrLogin = () => {
-    this.setState({ user: userService.getUser() })
-  }
-
-
-
-  // state = {
-  //   meeting: [],
-  //   user: ''
-  // }
-
+    this.setState({ user: userService.getUser() });
+  };
 
   /*--- Lifecycle Methods ---*/
 
-  // async componentDidMount() {
-  //   const schedules = await schedules.getAll();
-  //   this.setState({ schedules });
-  // }
-
-
+  async componentDidMount() {
+    console.log("i am App and i have mounted");
+    // make your call to set our inital state to the data here after component has mounted
+    const schedules = await schedulesAPI.getAll();
+    this.setState({ schedules });
+  }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-
-          {/* <h1>mySchedule</h1> */}
-          <NavBar
-            user={this.state.user}
-            logout={this.handleLogout}
-          />
-
-          {/* routes in nav bar */}
-
+          <NavBar user={this.state.user} logout={this.handleLogout} />
           <Switch>
-            <Route exact path='/' render={() =>
-              <div>
-                <LandingPage
-                  handleLogout={this.handleLogout}
-                  user={this.state.user}
-                // <div>
-                //               // display of all upcoming events
-                //               // click '+' button
-                // </div>
-                // getInitialState
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <div>
+                  <LandingPage
+                    handleLogout={this.handleLogout}
+                    user={this.state.user}
+                    // <div>
+                    //               // display of all upcoming events
+                    //               // click '+' button
+                    // </div>
+                    // getInitialState
+                  />
+                </div>
+              )}
+            />
+            <Route
+              exact
+              path="/signup"
+              render={({ history }) => (
+                <SignupPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
                 />
-              </div>
-            } />
-            <Route exact path='/signup' render={({ history }) =>
-              <SignupPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            } />
-            <Route exact path='/login' render={({ history }) =>
-              <LoginPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            } />
-            <Route exact path='/schedule' render={() =>
-              userService.getUser() ?
-                <SchedulesPage
-                  addSchedule={this.addSchedule}
-                  schedule={this.state.schedule}
-                // scores={this.state.scores}
-                // handleUpdateScores={this.handleUpdateScores}
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              render={({ history }) => (
+                <LoginPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
                 />
-                :
-                <Redirect to='/login' />
-            } />
+              )}
+            />
+            <Route
+              exact
+              path="/schedule"
+              render={() =>
+                userService.getUser() ? (
+                  <SchedulesPage
+                    addSchedule={this.addSchedule}
+                    schedule={this.state.schedule}
+                    // scores={this.state.scores}
+                    // handleUpdateScores={this.handleUpdateScores}
+                  />
+                ) : (
+                  <Redirect to="/login" />
+                )
+              }
+            />
           </Switch>
-
         </header>
-        {/* <div className="body">
-          <div>mySchedule</div>
-        </div> */}
-      </div >
-
-    )
+      </div>
+    );
   }
 }
-
-
-
 
 // function App() {
 //   return (
@@ -215,4 +163,4 @@ class App extends Component {
 //   );
 // }
 
-export default App
+export default App;
