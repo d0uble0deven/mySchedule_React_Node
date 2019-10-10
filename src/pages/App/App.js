@@ -51,8 +51,8 @@ class App extends Component {
   handleUpdateSchedule = async updatedSchedData => {
     try {
       const updatedSchedule = await scheduleAPI.asyncUpdate(updatedSchedData);
-      const newScheduleArray = this.state.schedule.map(p =>
-        p._id === updatedSchedule._id ? updatedSchedule : p
+      const newScheduleArray = this.state.schedule.map(s =>
+        s._id === updatedSchedule._id ? updatedSchedule : s
       );
       this.setState(
         { Schedule: newScheduleArray },
@@ -80,6 +80,7 @@ class App extends Component {
     console.log("i am App and i have mounted");
     // make your call to set our inital state to the data here after component has mounted
     const schedules = await scheduleAPI.getAll();
+    console.log(schedules);
     this.setState({ schedules });
   }
 

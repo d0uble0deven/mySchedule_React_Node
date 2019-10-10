@@ -55,7 +55,6 @@ export async function asyncUpdate(sched) {
       headers: {
         "content-type": "application/json",
         Authorization: "Bearer " + tokenService.getToken()
-        // Authorization: "Bearer" + getToken
       },
       body: JSON.stringify(sched)
     });
@@ -69,6 +68,10 @@ export async function asyncUpdate(sched) {
 
 export function deleteOne(id) {
   return fetch(`${BASE_URL}/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + tokenService.getToken()
+    }
   }).then(res => res.json());
 }

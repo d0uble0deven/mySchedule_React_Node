@@ -9,7 +9,6 @@ class Meeting extends Component {
       <div className="Meeting">
         <hr />
         Meeting
-        <hr />
         <button
           className="deleteItem-btn"
           onClick={this.props.handleDeleteSchedule}
@@ -22,7 +21,7 @@ class Meeting extends Component {
         >
           Edit
         </button>
-        <Link to="/edit">Edit</Link>
+        {/* <Link to="/edit">Edit</Link> */}
         <hr />
       </div>
     );

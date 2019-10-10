@@ -9,7 +9,8 @@ router.use(require("../../config/auth"));
 
 router.get("/", scheduleCtrl.index);
 router.get("/:id", scheduleCtrl.show);
-router.post("/", checkAuth, scheduleCtrl.create);
+router.post("/", scheduleCtrl.create);
+// router.post("/", checkAuth, scheduleCtrl.create);
 router.delete("/:id", scheduleCtrl.delete);
 router.put("/:id", scheduleCtrl.update);
 
