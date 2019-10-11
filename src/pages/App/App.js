@@ -170,6 +170,7 @@ class App extends Component {
               render={() =>
                 userService.getUser() ? (
                   <SchedulesPage
+                    // user={this.state}
                     schedule={this.state.schedule}
                     // handleUpdateSchedule={this.handleUpdateSchedule}
                     handleDeleteSchedule={this.handleDeleteSchedule}

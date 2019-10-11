@@ -6,7 +6,7 @@ import Month from "../Schedule/Month/Month";
 import "./SchedulesPage.css";
 import MeetingCard from "../MeetingCard/MeetingCard";
 
-function SchedulesPage(props) {
+const SchedulesPage = props => {
   const list = props.schedule.map(sched => {
     return (
       <MeetingCard
@@ -19,12 +19,12 @@ function SchedulesPage(props) {
 
   return (
     <>
-      <NavBar />
-      <h3>Schedule</h3>
-      <div className="PuppyListPage-grid">{list}</div>
+      <NavBar user={props.user} />
+      {/* <h3>Schedule</h3> */}
+      <div>{list}</div>
     </>
   );
-}
+};
 
 // Main Page
 

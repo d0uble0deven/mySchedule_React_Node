@@ -1,0 +1,12 @@
+header {
+  /* padding: 10px 10px 10px 10px; */
+}
+
+.button-LP {
+  /* margin: 50px 50px 10px 50px; */
+  font-size: 26px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-decoration: underline;
+  color: rgba(84, 32, 137);
+}

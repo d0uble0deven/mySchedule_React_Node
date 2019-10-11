@@ -5,34 +5,33 @@ import "./MeetingCard.css";
 function MeetingCard({ sched, handleDeleteSchedule }) {
   // console.log("these are the props", props);
   return (
-    <div className="panel panel-default">
-      <div className="panel-heading"></div>
+    <div className="card">
       <div className="panel-body">
-        <dl className="dl">
-          <dt>Date</dt>
-          <dd>{sched.date}</dd>
-          <dt>People</dt>
-          <dd>{sched.people}</dd>
-          <dt>Time</dt>
-          <dd>{sched.time}</dd>
-          <dt>Location</dt>
-          <dd>{sched.location}</dd>
-          <dt>Notes</dt>
-          <dd>{sched.notes}</dd>
-        </dl>
+        <div className="dl">
+          <ul className="ul">Date:</ul>
+          <li className="li">{sched.date}</li>
+          <ul className="ul">People:</ul>
+          <li className="li">{sched.people}</li>
+          <ul className="ul">Time:</ul>
+          <li className="li">{sched.time}</li>
+          <ul className="ul">Location:</ul>
+          <li className="li">{sched.location}</li>
+          <ul className="ul">Notes:</ul>
+          <li className="li">{sched.notes}</li>
+        </div>
       </div>
-      <div className="panel-footer">
-        <Link
-          className="btn btn-xs btn-warning"
+      <div className="bottom">
+        {/* <Link
+          className="Link"
           to={{
             pathname: "/edit",
             state: { sched }
           }}
         >
           EDIT
-        </Link>
+        </Link> */}
         <button
-          className="btn btn-xs btn-danger margin-left-10"
+          className="button-MC"
           onClick={() => handleDeleteSchedule(sched._id)}
         >
           DELETE

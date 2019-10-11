@@ -1,12 +1,39 @@
-.panel panel-default {
+/* .panel panel-default {
   border: black solid 5px;
-}
+} */
 
-dt {
+.li {
+  list-style-type: none;
+  background: #dff8eb;
+}
+.ul {
+  /* border: 1px solid black; */
+  text-align: justify;
   font-weight: 800;
 }
 
-.dl {
-  border: black;
-  text-align: center;
+.bottom {
+  /* border: 1px solid black; */
+  align-content: stretch;
+}
+
+.Link {
+  margin: 50px;
+  color: black;
+}
+
+.button-MC {
+  margin: 50px 50px 10px 50px;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-decoration: underline;
+  color: black;
+  background: #dff8eb;
+}
+
+.card {
+  border: black solid 5px;
+  margin: 20px;
+  padding: 50px;
 }

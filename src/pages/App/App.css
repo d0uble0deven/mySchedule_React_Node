@@ -2,11 +2,12 @@
   text-align: center;
   /* background-color: #282c34; */
   /* color: white; */
+  font-family: "Lucida Sans";
 }
 
 .App-logo {
   height: 40vmin;
-} 
+}
 
 .App-header {
   /* background-color: #6A687A; */
@@ -18,9 +19,9 @@
   background-color: #ffd900;
   /* background: rgb(16,37,66);
 background: radial-gradient(circle, rgba(16,37,66,1) 0%, rgba(223,248,235,1) 100%); */
-/* background: rgb(16,37,66);
+  /* background: rgb(16,37,66);
 background: radial-gradient(circle, rgba(16,37,66,0.5228466386554622) 0%, rgba(200,70,48,0.5900735294117647) 100%);   */
-min-height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,11 +35,9 @@ min-height: 100vh;
 .App-link {
   /* color: white; */
   /* color: #09d3ac; */
-
 }
 
-
-.body{
+.body {
   background-color: #282c34;
   min-height: 100vh;
   display: block;
@@ -48,7 +47,6 @@ min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 
 /* .nav {
   color: white;

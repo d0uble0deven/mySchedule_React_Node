@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../components/MeetingForm/MeetingForm.css";
 import PropTypes from "prop-types";
+import "./AddSchedulePage.css";
 
 class AddSchedulePage extends Component {
   state = {
@@ -35,47 +36,55 @@ class AddSchedulePage extends Component {
     return (
       <div className="MeetingForm">
         <form onSubmit={this.handleSubmit}>
-          <label>Date</label>
+          <label>Date: </label>
           <input
+            className="input-Add"
             type="text"
             value={this.state.formData.date}
             onChange={this.handleChange}
             name="date"
           />
 
-          <label>People </label>
+          <label>People: </label>
           <input
+            className="input-Add"
             type="text"
             value={this.state.formData.people}
             onChange={this.handleChange}
             name="people"
           />
 
-          <label>Time</label>
+          <label>Time: </label>
           <input
+            className="input-Add"
             type="text"
             value={this.state.formData.time}
             onChange={this.handleChange}
             name="time"
           />
 
-          <label>Location </label>
+          <label>Location: </label>
           <input
+            className="input-Add"
             type="text"
             value={this.state.formData.location}
             onChange={this.handleChange}
             name="location"
           />
 
-          <label>Notes </label>
+          <label>Notes: </label>
           <input
+            className="input-Add"
             type="text"
             value={this.state.formData.notes}
             onChange={this.handleChange}
             name="notes"
           />
 
-          <button type="submit"> + </button>
+          <button className="button-Add" type="submit">
+            {" "}
+            ADD{" "}
+          </button>
         </form>
       </div>
     );

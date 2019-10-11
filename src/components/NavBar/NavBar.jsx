@@ -7,9 +7,7 @@ const NavBar = props => {
   let nav = props.user ? (
     // ternary is an issue
     <div>
-      <hr />
       <Title />
-      <hr />
       <span className="NavBar-welcome">Welcome, {props.user.name}</span>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span>Check out your upcoming schedule</span>
@@ -32,7 +30,6 @@ const NavBar = props => {
       <Link to="/signup" className="NavBar-link">
         SIGN UP
       </Link>
-      <hr />
     </div>
   );
 
