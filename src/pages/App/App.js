@@ -52,10 +52,12 @@ class App extends Component {
 
   handleUpdateSchedule = async updatedSchedData => {
     try {
-      const updatedSchedule = await scheduleAPI.asyncUpdate(updatedSchedData);
+      const updatedSchedule = await scheduleAPI.update(updatedSchedData);
+      console.log(updatedSchedule);
       const newScheduleArray = this.state.schedule.map(s =>
         s._id === updatedSchedule._id ? updatedSchedule : s
       );
+      console.log(newScheduleArray);
       this.setState(
         { Schedule: newScheduleArray },
         // Using cb to wait for state to update before rerouting
