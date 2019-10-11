@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <div>
       {/* <NavBar /> */}
-      <Title />
+      {/* <Title /> */}
     </div>
   );
 }
