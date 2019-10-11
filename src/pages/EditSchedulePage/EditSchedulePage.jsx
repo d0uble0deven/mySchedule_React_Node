@@ -29,7 +29,7 @@ class EditSchedulePage extends Component {
     try {
       const formData = {
         ...this.state.formData,
-        [e.target.formData.name]: e.target.value
+        [e.target.name]: e.target.value
       };
       this.setState({
         formData
@@ -44,48 +44,51 @@ class EditSchedulePage extends Component {
       <div className="EditSchedulePage">
         <h4>Edit</h4>
         <form onSubmit={this.handleSubmit}>
-          <label>Date</label>
+          <label>Date: </label>
           <input
             type="text"
-            value={this.state.formData.date}
+            value={this.state.date}
             onChange={this.handleChange}
             name="date"
           />
 
-          <label>People</label>
+          <label>People: </label>
           <input
             type="text"
-            value={this.state.formData.people}
+            value={this.state.people}
             onChange={this.handleChange}
             name="people"
           />
 
-          <label>Time</label>
+          <label>Time: </label>
           <input
             type="text"
-            value={this.state.formData.time}
+            value={this.state.time}
             onChange={this.handleChange}
             name="time"
           />
 
-          <label>Location</label>
+          <label>Location: </label>
           <input
             type="text"
-            value={this.state.formData.location}
+            value={this.state.location}
             onChange={this.handleChange}
             name="location"
           />
 
-          <label>Notes</label>
+          <label>Notes: </label>
           <input
             type="text"
-            value={this.state.formData.notes}
+            value={this.state.notes}
             onChange={this.handleChange}
             name="notes"
           />
 
-          <button type="submit"> EDIT </button>
-          <Link to="/schedule">CANCEL</Link>
+          <button className="button-ES" type="submit">
+            {" "}
+            Edit{" "}
+          </button>
+          <Link to="/schedule">Cancel</Link>
         </form>
       </div>
     );
