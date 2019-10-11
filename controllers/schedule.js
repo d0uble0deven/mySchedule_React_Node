@@ -35,5 +35,8 @@ async function update(req, res) {
     req.body,
     { new: true }
   );
+  console.log(req.body);
+  console.log(req.params.id);
+
   res.status(200).json(updatedSchedule);
 }

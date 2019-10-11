@@ -36,4 +36,14 @@
   border: black solid 5px;
   margin: 20px;
   padding: 50px;
+  box-shadow: 5px 5px 15px 5px #000000;
+  background-color: rgba(132, 220, 240, 0.769);
+}
+
+.card:hover {
+  border: black solid 5px;
+  margin: 20px;
+  padding: 50px;
+  box-shadow: 10px 10px 20px 10px #000000;
+  background-color: rgba(132, 220, 240, 0.769);
 }

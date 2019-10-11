@@ -40,7 +40,6 @@ class App extends Component {
     await scheduleAPI.deleteOne(id);
     this.setState(
       state => ({
-        // Yay, filter returns a NEW array
         schedule: state.schedule.filter(s => s._id !== id)
       }),
       () => this.props.history.push("/schedule")
@@ -49,35 +48,41 @@ class App extends Component {
 
   /*--- UPDATE FUNCTION ---*/
 
+  // handleUpdateSchedule = async updatedSchedData => {
+  //   try {
+  //     const updatedSchedule = await scheduleAPI.asyncUpdate(updatedSchedData);
+  //     console.log(updatedSchedule);
+  //     const newScheduleArray = this.state.schedule.map(s =>
+  //       s._id === updatedSchedule._id ? updatedSchedule : s
+  //     );
+  //     console.log(newScheduleArray);
+  //     this.setState(
+  //       { Schedule: newScheduleArray },
+  //       // Using cb to wait for state to update before rerouting
+  //       () => this.props.history.push("/schedule")
+  //     );
+  //   } catch (error) {
+  //     throw new Error(error);
+  //   }
+  // };
+
   handleUpdateSchedule = async updatedSchedData => {
     try {
-      const updatedSchedule = await scheduleAPI.asyncUpdate(updatedSchedData);
+      console.log(scheduleAPI.update);
+      const updatedSchedule = await scheduleAPI.update(updatedSchedData);
       console.log(updatedSchedule);
       const newScheduleArray = this.state.schedule.map(s =>
         s._id === updatedSchedule._id ? updatedSchedule : s
       );
+      console.log(updatedSchedule.id);
       console.log(newScheduleArray);
-      this.setState(
-        { Schedule: newScheduleArray },
-        // Using cb to wait for state to update before rerouting
-        () => this.props.history.push("/schedule")
+      this.setState({ Schedule: newScheduleArray }, () =>
+        this.props.history.push("/schedule")
       );
     } catch (error) {
       throw new Error(error);
     }
   };
-
-  // handleUpdatePost = async updatedPostData => {
-  //   const updatedPost = await postAPI.update(updatedPostData);
-  //   const newPostsArray = this.state.posts.map(p =>
-  //     p._id === updatedPost._id ? updatedPost : p
-  //   );
-  //   this.setState(
-  //     { posts: newPostsArray },
-  //     // Using cb to wait for state to update before rerouting
-  //     () => this.props.history.push("/")
-  //   );
-  // };
 
   /*--- Callback Methods ---*/
   handleLogout = () => {

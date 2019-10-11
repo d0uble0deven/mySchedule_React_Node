@@ -35,36 +35,40 @@ export function create(sched) {
   }).then(res => res.json());
 }
 // this is es5 promises
-// export function update(sched) {
-//   return fetch(`${BASE_URL}/${sched.id}`, {
-//     method: "PUT",
-//     headers: { "content-type": "application/json" },
-//     body: JSON.stringify(sched)
-//   })
-//     .then(res => res.json())
-//     .catch(error => console.error(error)); // always add a .catch(err)
-// }
+export function update(id) {
+  return fetch(`${BASE_URL}/${id}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + tokenService.getToken()
+    },
+    body: JSON.stringify(id)
+  })
+    .then(res => res.json())
+    .catch(error => console.error(error)); // always add a .catch(err)
+}
 
 // // this is es6 async await
-export async function asyncUpdate(sched) {
-  // this function runs properly but server returns 401
-  // TODO : use the getToken function to properly put your token in the headers then every single fetch should use the token the same way
-  try {
-    const response = await fetch(`${BASE_URL}/${sched._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        Authorization: "Bearer " + tokenService.getToken()
-      },
-      body: JSON.stringify(sched)
-    });
-    const updatedRecord = await response.json();
-    return updatedRecord;
-  } catch (error) {
-    // always add a try catch block
-    console.error(error);
-  }
-}
+// export async function asyncUpdate(sched) {
+//   // this function runs properly but server returns 401
+//   // TODO : use the getToken function to properly put your token in the headers then every single fetch should use the token the same way
+//   try {
+//     const response = await fetch(`${BASE_URL}/${sched._id}`, {
+//       method: "PUT",
+//       headers: {
+//         "content-type": "application/json",
+//         Authorization: "Bearer " + tokenService.getToken()
+//       },
+//       body: JSON.stringify(sched)
+//     });
+//     const updatedRecord = await response.json();
+//     console.log(updatedRecord);
+//     return updatedRecord;
+//   } catch (error) {
+//     // always add a try catch block
+//     console.error(error);
+//   }
+// }
 
 export function deleteOne(id) {
   return fetch(`${BASE_URL}/${id}`, {
