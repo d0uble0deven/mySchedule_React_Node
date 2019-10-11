@@ -7,7 +7,6 @@ import userService from "../../utils/userService";
 import "./App.css";
 import NavBar from "../../components/NavBar/NavBar";
 import LandingPage from "../LandingPage/LandingPage";
-// import scheduleService from "../../utils/scheduleService";
 import * as scheduleAPI from "../../services/schedules-api";
 import AddSchedulePage from "../AddSchedulePage/AddSchedulePage";
 import EditSchedulePage from "../EditSchedulePage/EditSchedulePage";
@@ -52,7 +51,7 @@ class App extends Component {
 
   handleUpdateSchedule = async updatedSchedData => {
     try {
-      const updatedSchedule = await scheduleAPI.update(updatedSchedData);
+      const updatedSchedule = await scheduleAPI.asyncUpdate(updatedSchedData);
       console.log(updatedSchedule);
       const newScheduleArray = this.state.schedule.map(s =>
         s._id === updatedSchedule._id ? updatedSchedule : s

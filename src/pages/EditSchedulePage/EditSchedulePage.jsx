@@ -1,33 +1,42 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./EditSchedulePage.css";
+import PropTypes from "prop-types";
 
 class EditSchedulePage extends Component {
   state = {
     // schedule,
-    // formData: this.props.location.state.post
-    formData: {
-      date: this.props.location.state.post,
-      people: this.props.location.state.post,
-      time: this.props.location.state.post,
-      location: this.props.location.state.post,
-      notes: this.props.location.state.post
-    }
+    formData: this.props.location.state.schedule
+    // formData: {
+    //   date: this.props.location.state.schedule,
+    //   people: this.props.location.state.schedule,
+    //   time: this.props.location.state.schedule,
+    //   location: this.props.location.state.schedule,
+    //   notes: this.props.location.state.schedule
+    // }
   };
 
   handleSubmit = e => {
-    e.preventDefault();
-    this.props.handleUpdateSchedule(this.state.formData);
+    try {
+      e.preventDefault();
+      this.props.handleUpdateSchedule(this.state.formData);
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   handleChange = e => {
-    const formData = {
-      ...this.state.formData,
-      [e.target.name]: e.target.value
-    };
-    this.setState({
-      formData
-    });
+    try {
+      const formData = {
+        ...this.state.formData,
+        [e.target.formData.name]: e.target.value
+      };
+      this.setState({
+        formData
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   render() {
@@ -39,7 +48,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.date}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             name="date"
           />
 
@@ -47,7 +56,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.people}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             name="people"
           />
 
@@ -55,7 +64,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.time}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             name="time"
           />
 
@@ -63,7 +72,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.location}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             name="location"
           />
 
@@ -71,7 +80,7 @@ class EditSchedulePage extends Component {
           <input
             type="text"
             value={this.state.formData.notes}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             name="notes"
           />
 
@@ -83,8 +92,8 @@ class EditSchedulePage extends Component {
   }
 }
 
-export default EditSchedulePage;
+EditSchedulePage.propTypes = {
+  handleUpdateSchedule: PropTypes.func.isRequired
+};
 
-// EditSchedulePage.propTypes = {
-//   handleUpdateSchedule: PropTypes.func.isRequired
-// };
+export default EditSchedulePage;

@@ -1,8 +1,5 @@
-import React, { Component } from "react";
-// import { Link } from 'react-router-dom';
+import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import MeetingForm from "../MeetingForm/MeetingForm";
-import Month from "../Schedule/Month/Month";
 import "./SchedulesPage.css";
 import MeetingCard from "../MeetingCard/MeetingCard";
 

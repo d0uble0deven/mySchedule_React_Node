@@ -21,7 +21,7 @@ function MeetingCard({ sched, handleDeleteSchedule }) {
         </div>
       </div>
       <div className="bottom">
-        {/* <Link
+        <Link
           className="Link"
           to={{
             pathname: "/edit",
@@ -29,7 +29,7 @@ function MeetingCard({ sched, handleDeleteSchedule }) {
           }}
         >
           EDIT
-        </Link> */}
+        </Link>
         <button
           className="button-MC"
           onClick={() => handleDeleteSchedule(sched._id)}
