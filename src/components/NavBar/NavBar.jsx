@@ -8,18 +8,27 @@ const NavBar = props => {
     // ternary is an issue
     <div>
       <Title />
-      <span className="NavBar-welcome">Welcome, {props.user.name}</span>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <span>Check out your upcoming schedule</span>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <span className="welcome">Yay! You're logged in, {props.user.name}!</span>
+      <br />
+      <br />
+      {/* &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <span>Click over here -></span> */}
+      {/* &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
       <Link to="/add" className="NavBar-link">
-        <span>ADD</span>
+        <span>Add Event</span>
       </Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <br />
+      <br />
+      {/* &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
       <Link to="/" className="NavBar-link" onClick={props.logout}>
-        LOG OUT
+        Log Out
       </Link>
+      <br />
+      <br />
       <hr />
+      <br />
+
+      <br />
     </div>
   ) : (
     <div>

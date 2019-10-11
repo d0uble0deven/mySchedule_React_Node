@@ -83,7 +83,7 @@ class AddSchedulePage extends Component {
 
           <button className="button-Add" type="submit">
             {" "}
-            ADD{" "}
+            Submit{" "}
           </button>
         </form>
       </div>

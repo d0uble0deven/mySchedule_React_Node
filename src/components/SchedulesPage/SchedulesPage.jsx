@@ -20,44 +20,9 @@ const SchedulesPage = props => {
   return (
     <>
       <NavBar user={props.user} />
-      {/* <h3>Schedule</h3> */}
       <div>{list}</div>
     </>
   );
 };
-
-// Main Page
-
-// const SchedulesPage = props => {
-//   return (
-//     <div>
-//       <NavBar />
-//       <hr />
-
-//       {/* {props.schedule.map(schedule => (
-//         <MeetingCard
-//           key={schedule._id}
-//           schedule={schedule}
-//           handleDeleteSchedule={props.handleDeleteSchedule}
-//         />
-//       ))} */}
-
-//       <MeetingCard
-//         schedule={props.schedule}
-//         handleDeleteSchedule={props.handleDeleteSchedule}
-//         handleUpdateSchedule={props.handleUpdateSchedule}
-//         user={props.user}
-//       />
-
-//       {/* <Month
-//         schedule={props.schedule}
-//         handleDeleteSchedule={props.handleDeleteSchedule}
-//         handleUpdateSchedule={props.handleUpdateSchedule}
-//         user={props.user}
-//       /> */}
-//       <hr />
-//     </div>
-//   );
-// };
 
 export default SchedulesPage;

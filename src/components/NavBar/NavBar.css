@@ -1,18 +1,18 @@
-.NavBar-welcome {
+.welcome span {
   color: #c84630;
   background: white;
-  }
+}
 
 .NavBar {
   color: #c84630;
   background: white;
-  }
+}
 
 .NavBar-link {
   color: #c84630;
-    background: white;
-  }
+  background: white;
+}
 
 h1 {
-    color: #dff8eb;
-  }
+  color: #dff8eb;
+}
