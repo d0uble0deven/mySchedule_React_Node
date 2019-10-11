@@ -20,7 +20,7 @@ function SchedulesPage(props) {
   return (
     <>
       <NavBar />
-      <h5>Schedule</h5>
+      <h3>Schedule</h3>
       <div className="PuppyListPage-grid">{list}</div>
     </>
   );
