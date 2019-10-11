@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 class EditSchedulePage extends Component {
   state = {
     // schedule,
-    formData: this.props.location.state.schedule
-    // formData: {
-    //   date: "",
-    //   people: "",
-    //   time: "",
-    //   location: "",
-    //   notes: ""
-    // }
+    // formData: this.props.location.state.post
+    formData: {
+      date: this.props.location.state.post,
+      people: this.props.location.state.post,
+      time: this.props.location.state.post,
+      location: this.props.location.state.post,
+      notes: this.props.location.state.post
+    }
   };
 
   handleSubmit = e => {
@@ -74,7 +74,7 @@ class EditSchedulePage extends Component {
             name="notes"
           />
 
-          <button type="submit"> += </button>
+          <button type="submit"> EDIT </button>
           <Link to="/schedule">CANCEL</Link>
         </form>
       </div>

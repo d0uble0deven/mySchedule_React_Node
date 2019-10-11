@@ -66,6 +66,18 @@ class App extends Component {
     }
   };
 
+  // handleUpdatePost = async updatedPostData => {
+  //   const updatedPost = await postAPI.update(updatedPostData);
+  //   const newPostsArray = this.state.posts.map(p =>
+  //     p._id === updatedPost._id ? updatedPost : p
+  //   );
+  //   this.setState(
+  //     { posts: newPostsArray },
+  //     // Using cb to wait for state to update before rerouting
+  //     () => this.props.history.push("/")
+  //   );
+  // };
+
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
@@ -143,6 +155,7 @@ class App extends Component {
               path="/edit"
               render={({ history, location }) => (
                 <EditSchedulePage
+                  history={history}
                   handleUpdateSchedule={this.handleUpdateSchedule}
                   location={location}
                 />
