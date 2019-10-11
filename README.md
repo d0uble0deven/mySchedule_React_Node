@@ -7,9 +7,9 @@ Create a scheduling app with a clean interface.
 ### Technology Used
 
 - Mongoose
-- Node.JS
 - Express
 - React.JS
+- Node.JS
 
 ### User Stories
 
